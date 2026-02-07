@@ -43,7 +43,7 @@ export function createServer() {
 
   // Error handling - must be last
   // Only handle API route 404s, let Vite handle the rest
-  app.use("/api/*", notFoundHandler);
+  app.use(/^\/api/, notFoundHandler);
   app.use(errorHandler);
 
   return app;
