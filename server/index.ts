@@ -41,7 +41,7 @@ export function createServer() {
   app.delete("/api/projects/:projectId/files/:fileId", filesApi.deleteFile);
 
   // API 404 handler - catches undefined API routes
-  app.all("/api/*", (_req, res) => {
+  app.all(/^\/api/, (_req, res) => {
     res.status(404).json({
       error: "Not Found",
       code: "NOT_FOUND",
