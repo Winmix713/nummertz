@@ -57,20 +57,12 @@ export const useCreateFile = (projectId: string) => {
       language: FileLanguage;
       content?: string;
     }) =>
-      filesApi.create(
-        projectId,
-        params.name,
-        params.language,
-        params.content,
-      ),
+      filesApi.create(projectId, params.name, params.language, params.content),
     onSuccess: (newFile) => {
       // Invalidate files list
       queryClient.invalidateQueries({ queryKey: filesQueryKey(projectId) });
       // Add to cache
-      queryClient.setQueryData(
-        fileQueryKey(projectId, newFile.id),
-        newFile,
-      );
+      queryClient.setQueryData(fileQueryKey(projectId, newFile.id), newFile);
     },
   });
 };
@@ -89,10 +81,7 @@ export const useUpdateFile = (projectId: string, fileId: string) => {
     }) => filesApi.update(projectId, fileId, updates),
     onSuccess: (updatedFile) => {
       // Update cache
-      queryClient.setQueryData(
-        fileQueryKey(projectId, fileId),
-        updatedFile,
-      );
+      queryClient.setQueryData(fileQueryKey(projectId, fileId), updatedFile);
       // Invalidate files list
       queryClient.invalidateQueries({ queryKey: filesQueryKey(projectId) });
     },

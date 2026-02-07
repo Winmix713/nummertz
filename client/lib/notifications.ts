@@ -60,7 +60,7 @@ export const notifyInfo = (options: NotificationOptions) => {
 /**
  * Show loading notification with promise
  */
-export const notifyPromise = <T,>(
+export const notifyPromise = <T>(
   promise: Promise<T>,
   messages: {
     loading: string;

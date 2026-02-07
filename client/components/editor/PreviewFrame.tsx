@@ -168,7 +168,10 @@ export const PreviewFrame: React.FC<PreviewFrameProps> = ({
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       // Only accept messages from our iframe
-      if (iframeRef.current && event.source !== iframeRef.current.contentWindow) {
+      if (
+        iframeRef.current &&
+        event.source !== iframeRef.current.contentWindow
+      ) {
         return;
       }
 
@@ -188,7 +191,9 @@ export const PreviewFrame: React.FC<PreviewFrameProps> = ({
       }
 
       // Handle errors
-      if (["ERROR", "SCRIPT_ERROR", "UNHANDLED_REJECTION"].includes(data?.type)) {
+      if (
+        ["ERROR", "SCRIPT_ERROR", "UNHANDLED_REJECTION"].includes(data?.type)
+      ) {
         setPreviewError(data);
         return;
       }

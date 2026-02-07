@@ -1,13 +1,11 @@
 import React, { useCallback } from "react";
-import {
-  Maximize2,
-  Monitor,
-  Smartphone,
-  Tablet,
-} from "lucide-react";
+import { Maximize2, Monitor, Smartphone, Tablet } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { useBreakpointConfig, BreakpointValue } from "@/components/editor/core/useBreakpointConfig";
+import {
+  useBreakpointConfig,
+  BreakpointValue,
+} from "@/components/editor/core/useBreakpointConfig";
 
 interface BreakpointSelectorProps {
   currentBreakpoint: BreakpointValue;

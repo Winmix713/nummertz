@@ -201,8 +201,7 @@ export const isValidBreakpoint = (value: unknown): value is Breakpoint => {
 
 export const isValidFileLanguage = (value: unknown): value is FileLanguage => {
   return (
-    typeof value === "string" &&
-    ["html", "css", "javascript"].includes(value)
+    typeof value === "string" && ["html", "css", "javascript"].includes(value)
   );
 };
 
@@ -214,8 +213,7 @@ export const isValidViewMode = (value: unknown): value is ViewMode => {
 
 export const isValidDeviceType = (value: unknown): value is DeviceType => {
   return (
-    typeof value === "string" &&
-    ["mobile", "tablet", "desktop"].includes(value)
+    typeof value === "string" && ["mobile", "tablet", "desktop"].includes(value)
   );
 };
 

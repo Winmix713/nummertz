@@ -4,7 +4,9 @@ import { cn } from "./utils";
 describe("cn utility function", () => {
   describe("Basic functionality", () => {
     it("should merge multiple class strings", () => {
-      expect(cn("text-red-500", "bg-blue-500")).toBe("text-red-500 bg-blue-500");
+      expect(cn("text-red-500", "bg-blue-500")).toBe(
+        "text-red-500 bg-blue-500",
+      );
     });
 
     it("should handle single class", () => {
@@ -24,7 +26,7 @@ describe("cn utility function", () => {
     it("should include classes when condition is true", () => {
       const isActive = true;
       expect(cn("base-class", isActive && "active-class")).toBe(
-        "base-class active-class"
+        "base-class active-class",
       );
     });
 
@@ -43,14 +45,14 @@ describe("cn utility function", () => {
           "base",
           isActive && "active",
           isDisabled && "disabled",
-          isHovered && "hovered"
-        )
+          isHovered && "hovered",
+        ),
       ).toBe("base active hovered");
     });
 
     it("should filter out null and undefined values", () => {
       expect(cn("base-class", null, undefined, "valid-class")).toBe(
-        "base-class valid-class"
+        "base-class valid-class",
       );
     });
   });
@@ -74,19 +76,19 @@ describe("cn utility function", () => {
 
     it("should preserve non-conflicting modifiers", () => {
       expect(cn("hover:bg-blue-500", "focus:bg-red-500")).toBe(
-        "hover:bg-blue-500 focus:bg-red-500"
+        "hover:bg-blue-500 focus:bg-red-500",
       );
     });
 
     it("should override same modifier classes", () => {
       expect(cn("hover:bg-blue-500", "hover:bg-red-500")).toBe(
-        "hover:bg-red-500"
+        "hover:bg-red-500",
       );
     });
 
     it("should handle responsive variants correctly", () => {
       expect(cn("text-sm md:text-base", "md:text-lg")).toBe(
-        "text-sm md:text-lg"
+        "text-sm md:text-lg",
       );
     });
   });
@@ -97,7 +99,7 @@ describe("cn utility function", () => {
         cn("base", {
           conditional: true,
           "not-included": false,
-        })
+        }),
       ).toBe("base conditional");
     });
 
@@ -105,14 +107,16 @@ describe("cn utility function", () => {
       expect(
         cn(
           { "class-1": true, "class-2": false },
-          { "class-3": true, "class-4": true }
-        )
+          { "class-3": true, "class-4": true },
+        ),
       ).toBe("class-1 class-3 class-4");
     });
 
     it("should mix strings and objects", () => {
       expect(
-        cn("base-class", { active: true }, "another-class", { disabled: false })
+        cn("base-class", { active: true }, "another-class", {
+          disabled: false,
+        }),
       ).toBe("base-class active another-class");
     });
   });
@@ -120,13 +124,13 @@ describe("cn utility function", () => {
   describe("Array handling", () => {
     it("should handle arrays of classes", () => {
       expect(cn(["class-1", "class-2"], "class-3")).toBe(
-        "class-1 class-2 class-3"
+        "class-1 class-2 class-3",
       );
     });
 
     it("should handle nested arrays", () => {
       expect(cn(["class-1", ["class-2", "class-3"]])).toBe(
-        "class-1 class-2 class-3"
+        "class-1 class-2 class-3",
       );
     });
 
@@ -143,7 +147,7 @@ describe("cn utility function", () => {
 
     it("should trim whitespace", () => {
       expect(cn("  spaced-class  ", "another-class")).toBe(
-        "spaced-class another-class"
+        "spaced-class another-class",
       );
     });
 
@@ -153,9 +157,9 @@ describe("cn utility function", () => {
     });
 
     it("should handle special characters in class names", () => {
-      expect(cn("class-with-dash", "class_with_underscore", "class:colon")).toBe(
-        "class-with-dash class_with_underscore class:colon"
-      );
+      expect(
+        cn("class-with-dash", "class_with_underscore", "class:colon"),
+      ).toBe("class-with-dash class_with_underscore class:colon");
     });
   });
 
@@ -173,8 +177,8 @@ describe("cn utility function", () => {
           variant === "primary" && "btn-primary",
           (variant as Variant) === "secondary" && "btn-secondary",
           size === "lg" && "btn-lg",
-          (size as Size) === "sm" && "btn-sm"
-        )
+          (size as Size) === "sm" && "btn-sm",
+        ),
       ).toBe("btn btn-primary btn-lg");
     });
 
@@ -186,8 +190,8 @@ describe("cn utility function", () => {
         cn(
           "button",
           isDisabled && "opacity-50 cursor-not-allowed",
-          isLoading && "animate-pulse"
-        )
+          isLoading && "animate-pulse",
+        ),
       ).toBe("button opacity-50 cursor-not-allowed");
     });
 
@@ -199,8 +203,8 @@ describe("cn utility function", () => {
         cn(
           "input border rounded",
           hasError ? "border-red-500" : "border-gray-300",
-          isFocused && "ring-2 ring-blue-500"
-        )
+          isFocused && "ring-2 ring-blue-500",
+        ),
       ).toBe("input border rounded border-red-500");
     });
 
@@ -238,12 +242,12 @@ describe("cn utility function", () => {
           "px-4 py-2 rounded font-medium transition-colors",
           "bg-blue-500 hover:bg-blue-600",
           "text-white",
-          className
+          className,
         );
       };
 
       expect(getButtonClasses("bg-red-500")).toBe(
-        "px-4 py-2 rounded font-medium transition-colors hover:bg-blue-600 text-white bg-red-500"
+        "px-4 py-2 rounded font-medium transition-colors hover:bg-blue-600 text-white bg-red-500",
       );
     });
 

@@ -5,9 +5,7 @@ import { handleDemo } from "./routes/demo";
 import * as projectsApi from "./routes/projects";
 import * as filesApi from "./routes/files";
 import { requestLogger } from "./middleware/logger";
-import {
-  errorHandler,
-} from "./middleware/errorHandler";
+import { errorHandler } from "./middleware/errorHandler";
 
 export function createServer() {
   const app = express();

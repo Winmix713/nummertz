@@ -1,5 +1,12 @@
 import React, { useCallback } from "react";
-import { FolderTree, ChevronDown, FileCode, FileJson, FileType as FileHtml, Plus } from "lucide-react";
+import {
+  FolderTree,
+  ChevronDown,
+  FileCode,
+  FileJson,
+  FileType as FileHtml,
+  Plus,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ProjectFile } from "@/hooks/use-project-files";
 

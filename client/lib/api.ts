@@ -15,10 +15,7 @@ const API_BASE = "/api";
 /**
  * Helper to handle API responses
  */
-async function apiCall<T>(
-  url: string,
-  options?: RequestInit,
-): Promise<T> {
+async function apiCall<T>(url: string, options?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE}${url}`, {
     headers: {
       "Content-Type": "application/json",

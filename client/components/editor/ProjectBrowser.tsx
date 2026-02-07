@@ -6,7 +6,11 @@
 import React, { useState, useCallback } from "react";
 import { Plus, Trash2, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useProjects, useCreateProject, useDeleteProject } from "@/hooks/useProjects";
+import {
+  useProjects,
+  useCreateProject,
+  useDeleteProject,
+} from "@/hooks/useProjects";
 import { NewProjectDialog } from "@/components/dialogs/NewProjectDialog";
 import { formatDistanceToNow } from "date-fns";
 
@@ -80,7 +84,9 @@ export const ProjectBrowser: React.FC<ProjectBrowserProps> = React.memo(
           {projects.length === 0 ? (
             <div className="p-4 text-center text-muted-foreground">
               <p>No projects yet</p>
-              <p className="text-sm mt-2">Click "New" to create your first project</p>
+              <p className="text-sm mt-2">
+                Click "New" to create your first project
+              </p>
             </div>
           ) : (
             <div className="space-y-2 p-4">
@@ -103,7 +109,8 @@ export const ProjectBrowser: React.FC<ProjectBrowserProps> = React.memo(
                         </p>
                       )}
                       <p className="text-xs text-muted-foreground mt-1">
-                        {project.files.length} file{project.files.length !== 1 ? "s" : ""}
+                        {project.files.length} file
+                        {project.files.length !== 1 ? "s" : ""}
                       </p>
                     </div>
 

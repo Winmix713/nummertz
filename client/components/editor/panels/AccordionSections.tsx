@@ -6,7 +6,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
-import { PropertyInput, PropertySelect, PropertyNumber, PropertySlider } from "./PropertyControls";
+import {
+  PropertyInput,
+  PropertySelect,
+  PropertyNumber,
+  PropertySlider,
+} from "./PropertyControls";
 import { DebouncedInput } from "@/components/editor/core/DebouncedInput";
 import { Slider } from "@/components/editor/core/Slider";
 import type { InspectorState } from "@/hooks/use-inspector";
@@ -509,9 +514,7 @@ export const AccordionSections: React.FC<AccordionSectionsProps> = React.memo(
               min={-200}
               max={200}
               unit="px"
-              onChange={(value) =>
-                handleTransform2DChange("translateX", value)
-              }
+              onChange={(value) => handleTransform2DChange("translateX", value)}
             />
             <Slider
               label="Translate Y"
@@ -519,9 +522,7 @@ export const AccordionSections: React.FC<AccordionSectionsProps> = React.memo(
               min={-200}
               max={200}
               unit="px"
-              onChange={(value) =>
-                handleTransform2DChange("translateY", value)
-              }
+              onChange={(value) => handleTransform2DChange("translateY", value)}
             />
             <Slider
               label="Rotate"

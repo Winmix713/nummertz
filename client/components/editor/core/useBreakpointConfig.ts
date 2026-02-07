@@ -1,6 +1,13 @@
 import { useMemo } from "react";
 
-export type BreakpointValue = "auto" | "base" | "sm" | "md" | "lg" | "xl" | "2xl";
+export type BreakpointValue =
+  | "auto"
+  | "base"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl";
 
 export interface BreakpointConfig {
   value: BreakpointValue;

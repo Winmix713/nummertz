@@ -29,8 +29,7 @@ export const isBreakpoint = (value: unknown): value is Breakpoint => {
  */
 export const isFileLanguage = (value: unknown): value is FileLanguage => {
   return (
-    typeof value === "string" &&
-    ["html", "css", "javascript"].includes(value)
+    typeof value === "string" && ["html", "css", "javascript"].includes(value)
   );
 };
 
@@ -48,8 +47,7 @@ export const isViewMode = (value: unknown): value is ViewMode => {
  */
 export const isDeviceType = (value: unknown): value is DeviceType => {
   return (
-    typeof value === "string" &&
-    ["mobile", "tablet", "desktop"].includes(value)
+    typeof value === "string" && ["mobile", "tablet", "desktop"].includes(value)
   );
 };
 

@@ -28,9 +28,7 @@ export const TypographyStyleSchema = z.object({
   fontWeight: z.string().default(""),
   letterSpacing: z.string().default(""),
   lineHeight: z.string().default(""),
-  textAlign: z
-    .enum(["left", "center", "right", "justify"])
-    .default("left"),
+  textAlign: z.enum(["left", "center", "right", "justify"]).default("left"),
 });
 
 /**
@@ -168,9 +166,7 @@ export const SidebarTabSchema = z
 export const ToastMessageSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
-  type: z
-    .enum(["default", "success", "error", "warning"])
-    .default("default"),
+  type: z.enum(["default", "success", "error", "warning"]).default("default"),
 });
 
 /**

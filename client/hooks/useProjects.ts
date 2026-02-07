@@ -68,10 +68,7 @@ export const useUpdateProject = (projectId: string) => {
     }) => projectsApi.update(projectId, updates),
     onSuccess: (updatedProject) => {
       // Update cache
-      queryClient.setQueryData(
-        projectQueryKey(projectId),
-        updatedProject,
-      );
+      queryClient.setQueryData(projectQueryKey(projectId), updatedProject);
       // Invalidate projects list
       queryClient.invalidateQueries({ queryKey: PROJECTS_QUERY_KEY });
     },
