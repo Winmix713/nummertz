@@ -82,7 +82,7 @@ class ProjectStore {
 
     const newFile: ProjectFile = {
       ...file,
-      id: uuidv4(),
+      id: randomUUID(),
       createdAt: new Date(),
       updatedAt: new Date(),
     };
