@@ -53,9 +53,7 @@ export const createProject: RequestHandler = (req, res) => {
 export const listProjects: RequestHandler = (_req, res) => {
   try {
     const projects = projectStore.listProjects();
-    const validated = projects.map((p) => ProjectSchema.parse(p));
-
-    res.json(validated);
+    res.json(projects);
   } catch (error) {
     console.error("Error listing projects:", error);
     const errorResponse: ErrorResponse = {
