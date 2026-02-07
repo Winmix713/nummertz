@@ -38,7 +38,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Save
     if (config.onSave) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.SAVE,
+        key: COMMON_SHORTCUTS.SAVE.key,
+        modifiers: [...COMMON_SHORTCUTS.SAVE.modifiers],
+        description: COMMON_SHORTCUTS.SAVE.description,
         action: () => {
           config.onSave?.();
           notifySuccess({ title: "Changes saved" });
@@ -49,7 +51,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Undo
     if (config.onUndo) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.UNDO,
+        key: COMMON_SHORTCUTS.UNDO.key,
+        modifiers: [...COMMON_SHORTCUTS.UNDO.modifiers],
+        description: COMMON_SHORTCUTS.UNDO.description,
         action: () => {
           config.onUndo?.();
         },
@@ -59,7 +63,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Redo
     if (config.onRedo) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.REDO,
+        key: COMMON_SHORTCUTS.REDO.key,
+        modifiers: [...COMMON_SHORTCUTS.REDO.modifiers],
+        description: COMMON_SHORTCUTS.REDO.description,
         action: () => {
           config.onRedo?.();
         },
@@ -69,7 +75,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Format code
     if (config.onFormat) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.FORMAT,
+        key: COMMON_SHORTCUTS.FORMAT.key,
+        modifiers: [...COMMON_SHORTCUTS.FORMAT.modifiers],
+        description: COMMON_SHORTCUTS.FORMAT.description,
         action: () => {
           config.onFormat?.();
           notifyInfo({ title: "Code formatted" });
@@ -80,7 +88,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Search
     if (config.onSearch) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.SEARCH,
+        key: COMMON_SHORTCUTS.SEARCH.key,
+        modifiers: [...COMMON_SHORTCUTS.SEARCH.modifiers],
+        description: COMMON_SHORTCUTS.SEARCH.description,
         action: () => {
           config.onSearch?.();
         },
@@ -90,7 +100,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Focus editor
     if (config.onFocusEditor) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.FOCUS_EDITOR,
+        key: COMMON_SHORTCUTS.FOCUS_EDITOR.key,
+        modifiers: [...COMMON_SHORTCUTS.FOCUS_EDITOR.modifiers],
+        description: COMMON_SHORTCUTS.FOCUS_EDITOR.description,
         action: () => {
           config.onFocusEditor?.();
         },
@@ -100,7 +112,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Focus preview
     if (config.onFocusPreview) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.FOCUS_PREVIEW,
+        key: COMMON_SHORTCUTS.FOCUS_PREVIEW.key,
+        modifiers: [...COMMON_SHORTCUTS.FOCUS_PREVIEW.modifiers],
+        description: COMMON_SHORTCUTS.FOCUS_PREVIEW.description,
         action: () => {
           config.onFocusPreview?.();
         },
@@ -110,7 +124,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Toggle inspector
     if (config.onToggleInspector) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.TOGGLE_INSPECTOR,
+        key: COMMON_SHORTCUTS.TOGGLE_INSPECTOR.key,
+        modifiers: [...COMMON_SHORTCUTS.TOGGLE_INSPECTOR.modifiers],
+        description: COMMON_SHORTCUTS.TOGGLE_INSPECTOR.description,
         action: () => {
           config.onToggleInspector?.();
         },
@@ -120,7 +136,9 @@ export const useEnhancedKeyboardShortcuts = (
     // Reset project
     if (config.onReset) {
       shortcuts.push({
-        ...COMMON_SHORTCUTS.RESET_PROJECT,
+        key: COMMON_SHORTCUTS.RESET_PROJECT.key,
+        modifiers: [...COMMON_SHORTCUTS.RESET_PROJECT.modifiers],
+        description: COMMON_SHORTCUTS.RESET_PROJECT.description,
         action: () => {
           if (window.confirm("Are you sure you want to reset the project?")) {
             config.onReset?.();
