@@ -81,8 +81,7 @@ export const getProject: RequestHandler = (req, res) => {
       return res.status(404).json(error);
     }
 
-    const validated = ProjectSchema.parse(project);
-    res.json(validated);
+    res.json(project);
   } catch (error) {
     console.error("Error getting project:", error);
     const errorResponse: ErrorResponse = {
