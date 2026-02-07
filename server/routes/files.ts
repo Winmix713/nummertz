@@ -103,8 +103,7 @@ export const listFiles: RequestHandler = (req, res) => {
       return res.status(404).json(error);
     }
 
-    const validated = files.map((f) => ProjectFileSchema.parse(f));
-    res.json(validated);
+    res.json(files);
   } catch (error) {
     console.error("Error listing files:", error);
     const errorResponse: ErrorResponse = {
