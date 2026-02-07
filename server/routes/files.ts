@@ -75,8 +75,7 @@ export const createFile: RequestHandler = (req, res) => {
       return res.status(500).json(error);
     }
 
-    const validated = ProjectFileSchema.parse(created);
-    res.status(201).json(validated);
+    res.status(201).json(created);
   } catch (error) {
     console.error("Error creating file:", error);
     const errorResponse: ErrorResponse = {
