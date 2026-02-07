@@ -90,7 +90,10 @@ export const registerKeyboardShortcuts = (
 /**
  * Common keyboard shortcuts
  */
-export const COMMON_SHORTCUTS = {
+export const COMMON_SHORTCUTS: Record<
+  string,
+  Omit<KeyboardShortcutConfig, "action">
+> = {
   SAVE: {
     key: "s",
     modifiers: ["ctrl"],
