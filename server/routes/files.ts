@@ -40,7 +40,7 @@ export const createFile: RequestHandler = (req, res) => {
     }
 
     // Validate language
-    if (!FileLanguageSchema.safeParse(language).success) {
+    if (!VALID_LANGUAGES.includes(language)) {
       const error: ErrorResponse = {
         error: "Invalid file language",
         code: "INVALID_LANGUAGE",
