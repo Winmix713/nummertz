@@ -5,8 +5,7 @@
 
 import { RequestHandler } from "express";
 import { projectStore } from "../lib/projectStore";
-import { ProjectSchema } from "@shared/schemas/editor";
-import { ErrorResponse } from "@shared/types/editor";
+import type { ErrorResponse } from "@shared/types/editor";
 
 interface ProjectRequest {
   name: string;
