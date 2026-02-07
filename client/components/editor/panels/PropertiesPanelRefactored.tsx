@@ -3,10 +3,10 @@ import { useState, useCallback } from "react";
 import { Undo2, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useInspector } from "@/hooks/use-inspector";
-import { BreakpointSelector } from "./panels/BreakpointSelector";
-import { AccordionSections } from "./panels/AccordionSections";
-import { TailwindOutput } from "./panels/TailwindOutput";
-import { BreakpointValue } from "./core/useBreakpointConfig";
+import { BreakpointSelector } from "./BreakpointSelector";
+import { AccordionSections } from "./AccordionSections";
+import { TailwindOutput } from "./TailwindOutput";
+import { BreakpointValue } from "@/components/editor/core/useBreakpointConfig";
 
 /**
  * PropertiesPanel - Refactored version using extracted sub-components
