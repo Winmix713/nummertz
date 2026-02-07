@@ -91,44 +91,52 @@ export const registerKeyboardShortcuts = (
  * Common keyboard shortcuts
  */
 export const COMMON_SHORTCUTS = {
-  SAVE: { key: "s", modifiers: ["ctrl"] as const, description: "Save" },
-  UNDO: { key: "z", modifiers: ["ctrl"] as const, description: "Undo" },
+  SAVE: {
+    key: "s",
+    modifiers: ["ctrl"],
+    description: "Save",
+  },
+  UNDO: {
+    key: "z",
+    modifiers: ["ctrl"],
+    description: "Undo",
+  },
   REDO: {
     key: "z",
-    modifiers: ["ctrl", "shift"] as const,
+    modifiers: ["ctrl", "shift"],
     description: "Redo",
   },
   FORMAT: {
     key: "f",
-    modifiers: ["ctrl", "shift"] as const,
+    modifiers: ["ctrl", "shift"],
     description: "Format code",
   },
   SEARCH: {
     key: "f",
-    modifiers: ["ctrl"] as const,
+    modifiers: ["ctrl"],
     description: "Search",
   },
   FOCUS_EDITOR: {
     key: "1",
-    modifiers: ["ctrl"] as const,
+    modifiers: ["ctrl"],
     description: "Focus editor",
   },
   FOCUS_PREVIEW: {
     key: "2",
-    modifiers: ["ctrl"] as const,
+    modifiers: ["ctrl"],
     description: "Focus preview",
   },
   TOGGLE_INSPECTOR: {
     key: "i",
-    modifiers: ["ctrl", "shift"] as const,
+    modifiers: ["ctrl", "shift"],
     description: "Toggle inspector",
   },
   RESET_PROJECT: {
     key: "r",
-    modifiers: ["ctrl", "shift"] as const,
+    modifiers: ["ctrl", "shift"],
     description: "Reset project",
   },
-} as const;
+};
 
 /**
  * Format keyboard shortcut for display
