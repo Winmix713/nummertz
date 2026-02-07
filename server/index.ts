@@ -40,9 +40,7 @@ export function createServer() {
   app.patch("/api/projects/:projectId/files/:fileId", filesApi.updateFile);
   app.delete("/api/projects/:projectId/files/:fileId", filesApi.deleteFile);
 
-  // Error handling - must be last
-  // Only handle API route 404s, let Vite handle the rest
-  app.use(/^\/api/, notFoundHandler);
+  // Error handling middleware - must be last
   app.use(errorHandler);
 
   return app;
