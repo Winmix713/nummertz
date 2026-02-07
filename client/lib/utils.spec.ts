@@ -161,16 +161,19 @@ describe("cn utility function", () => {
 
   describe("Real-world component scenarios", () => {
     it("should handle button variant pattern", () => {
-      const variant: "primary" | "secondary" = "primary";
-      const size: "sm" | "lg" = "lg";
+      type Variant = "primary" | "secondary";
+      type Size = "sm" | "lg";
+
+      const variant: Variant = "primary";
+      const size: Size = "lg";
 
       expect(
         cn(
           "btn",
           variant === "primary" && "btn-primary",
-          variant === "secondary" && "btn-secondary",
-          size === "sm" && "btn-sm",
-          size === "lg" && "btn-lg"
+          (variant as Variant) === "secondary" && "btn-secondary",
+          size === "lg" && "btn-lg",
+          (size as Size) === "sm" && "btn-sm"
         )
       ).toBe("btn btn-primary btn-lg");
     });
