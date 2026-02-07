@@ -53,7 +53,8 @@ export const matchesShortcut = (
     modifiers.length === expectedModifiers.length &&
     expectedModifiers.every((mod) => modifiers.includes(mod));
 
-  return hasCorrectModifiers};
+  return hasCorrectModifiers;
+};
 
 /**
  * Registers keyboard shortcuts
