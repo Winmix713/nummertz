@@ -5,8 +5,10 @@
 
 import { RequestHandler } from "express";
 import { projectStore } from "../lib/projectStore";
-import { ProjectFileSchema, FileLanguageSchema } from "@shared/schemas/editor";
-import { FileLanguage, ErrorResponse, ProjectFile } from "@shared/types/editor";
+import type { FileLanguage, ErrorResponse, ProjectFile } from "@shared/types/editor";
+
+// Valid file languages
+const VALID_LANGUAGES = ["html", "css", "javascript"];
 
 interface CreateFileRequest {
   name: string;
