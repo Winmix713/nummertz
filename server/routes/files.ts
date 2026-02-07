@@ -169,8 +169,7 @@ export const updateFile: RequestHandler = (req, res) => {
       return res.status(500).json(error);
     }
 
-    const validated = ProjectFileSchema.parse(updated);
-    res.json(validated);
+    res.json(updated);
   } catch (error) {
     console.error("Error updating file:", error);
     const errorResponse: ErrorResponse = {
