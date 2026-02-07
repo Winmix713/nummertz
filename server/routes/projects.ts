@@ -35,9 +35,7 @@ export const createProject: RequestHandler = (req, res) => {
     }
 
     const project = projectStore.createProject(name, description);
-    const validated = ProjectSchema.parse(project);
-
-    res.status(201).json(validated);
+    res.status(201).json(project);
   } catch (error) {
     console.error("Error creating project:", error);
     const errorResponse: ErrorResponse = {
