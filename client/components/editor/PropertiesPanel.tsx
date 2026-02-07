@@ -218,7 +218,7 @@ export const PropertiesPanel: React.FC = () => {
 
   // Memoized handlers with useCallback
   const handleBreakpointChange = useCallback(
-    (value: string) => {
+    (value: "auto" | "base" | "sm" | "md" | "lg") => {
       updateState("breakpoint", value);
     },
     [updateState],
