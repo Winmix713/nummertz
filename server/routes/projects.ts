@@ -119,8 +119,7 @@ export const updateProject: RequestHandler = (req, res) => {
       return res.status(500).json(error);
     }
 
-    const validated = ProjectSchema.parse(updated);
-    res.json(validated);
+    res.json(updated);
   } catch (error) {
     console.error("Error updating project:", error);
     const errorResponse: ErrorResponse = {
