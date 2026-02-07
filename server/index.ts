@@ -4,6 +4,11 @@ import cors from "cors";
 import { handleDemo } from "./routes/demo";
 import * as projectsApi from "./routes/projects";
 import * as filesApi from "./routes/files";
+import { requestLogger } from "./middleware/logger";
+import {
+  errorHandler,
+  notFoundHandler,
+} from "./middleware/errorHandler";
 
 export function createServer() {
   const app = express();
@@ -12,6 +17,7 @@ export function createServer() {
   app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+  app.use(requestLogger);
 
   // Example API routes
   app.get("/api/ping", (_req, res) => {
