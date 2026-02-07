@@ -7,7 +7,6 @@ import * as filesApi from "./routes/files";
 import { requestLogger } from "./middleware/logger";
 import {
   errorHandler,
-  notFoundHandler,
 } from "./middleware/errorHandler";
 
 export function createServer() {
