@@ -40,6 +40,16 @@ export const useBreakpointConfig = () => {
         label: "LG",
         icon: "monitor",
       },
+      {
+        value: "xl" as const,
+        label: "XL",
+        icon: "monitor",
+      },
+      {
+        value: "2xl" as const,
+        label: "2XL",
+        icon: "monitor",
+      },
     ],
     [],
   );
