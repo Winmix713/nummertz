@@ -5,7 +5,7 @@
  */
 
 import { Project, ProjectFile } from "@shared/types/editor";
-import { v4 as uuidv4 } from "uuid";
+import { randomUUID } from "crypto";
 
 interface StoredProject extends Project {
   files: ProjectFile[];
