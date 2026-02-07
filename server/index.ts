@@ -40,6 +40,14 @@ export function createServer() {
   app.patch("/api/projects/:projectId/files/:fileId", filesApi.updateFile);
   app.delete("/api/projects/:projectId/files/:fileId", filesApi.deleteFile);
 
+  // API 404 handler - catches undefined API routes
+  app.all("/api/*", (_req, res) => {
+    res.status(404).json({
+      error: "Not Found",
+      code: "NOT_FOUND",
+    });
+  });
+
   // Error handling middleware - must be last
   app.use(errorHandler);
 
