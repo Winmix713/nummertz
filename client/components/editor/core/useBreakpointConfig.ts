@@ -1,12 +1,11 @@
 import { useMemo } from "react";
-import { Maximize2, Monitor, Smartphone, Tablet } from "lucide-react";
 
 export type BreakpointValue = "auto" | "base" | "sm" | "md" | "lg";
 
 export interface BreakpointConfig {
   value: BreakpointValue;
   label: string;
-  icon: React.ReactNode;
+  icon: string; // Icon name from lucide-react
 }
 
 /**
@@ -19,27 +18,27 @@ export const useBreakpointConfig = () => {
       {
         value: "auto" as const,
         label: "Auto",
-        icon: <Maximize2 className="w-3 h-3" />,
+        icon: "maximize-2",
       },
       {
         value: "base" as const,
         label: "Base",
-        icon: <Monitor className="w-3 h-3" />,
+        icon: "monitor",
       },
       {
         value: "sm" as const,
         label: "SM",
-        icon: <Smartphone className="w-3 h-3" />,
+        icon: "smartphone",
       },
       {
         value: "md" as const,
         label: "MD",
-        icon: <Tablet className="w-3 h-3" />,
+        icon: "tablet",
       },
       {
         value: "lg" as const,
         label: "LG",
-        icon: <Monitor className="w-3 h-3" />,
+        icon: "monitor",
       },
     ],
     [],
