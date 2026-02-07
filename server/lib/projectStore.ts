@@ -19,7 +19,7 @@ class ProjectStore {
    */
   createProject(name: string, description?: string): StoredProject {
     const project: StoredProject = {
-      id: uuidv4(),
+      id: randomUUID(),
       name,
       description,
       files: [],
