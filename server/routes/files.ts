@@ -131,8 +131,7 @@ export const getFile: RequestHandler = (req, res) => {
       return res.status(404).json(error);
     }
 
-    const validated = ProjectFileSchema.parse(file);
-    res.json(validated);
+    res.json(file);
   } catch (error) {
     console.error("Error getting file:", error);
     const errorResponse: ErrorResponse = {
